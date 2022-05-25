@@ -1,0 +1,158 @@
+@import url(./css/about.css);
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --font: "Roboto", sans-serif;
+}
+
+a {
+  text-decoration: none;
+  color: white;
+}
+
+body {
+  max-width: 100%;
+  height: 100vh;
+  background: url(./images/mountains-universe.png);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  object-fit: cover;
+}
+
+body.about-universe {
+  background-image: url(./images/mountains-universe-2.png);
+}
+
+body.about-exploration {
+  background-image: url(./images/mountains-universe-3.png);
+}
+
+header {
+  display: flex;
+  align-items: center;
+  gap: 32px;
+  padding: 50px;
+}
+
+.menu ul {
+  display: flex;
+  gap: 32px;
+  list-style: none;
+}
+
+.menu ul li a {
+  font-family: var(--font);
+  font-weight: normal;
+  font-size: 1.5rem;
+}
+
+.menu a:hover {
+  font-weight: bold;
+}
+
+section {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+}
+
+section h2 {
+  font-size: 3rem;
+  font-family: var(--font);
+  font-weight: 700;
+  margin-bottom: 24px;
+  line-height: 125%;
+  color: #e1e1e6;
+}
+
+section button {
+  font-family: var(--font);
+  text-transform: uppercase;
+  padding: 12px 32px;
+  border: 2px solid #ffffff;
+  border-radius: 5px;
+  gap: 8px;
+  color: #ffffff;
+  background-color: transparent;
+  cursor: pointer;
+  transition: 0.5s;
+}
+
+section button:hover {
+  color: #e1e1e6;
+  border: 2px solid #343492;
+}
+
+/* page universe */
+
+.universo {
+  display: block;
+  max-width: 630px;
+  height: 100%;
+  color: white;
+  font-family: var(--font);
+  margin: 0 50px;
+}
+
+.universo h2 {
+  font-size: 3rem;
+  margin-bottom: 16px;
+}
+
+.universo p {
+  font-size: 1.125rem;
+  font-weight: 400;
+  color: #e1e1e6;
+}
+
+/* page exploracao */
+
+.exploracao {
+  display: block;
+  max-width: 650px;
+  height: 100%;
+  color: white;
+  font-family: var(--font);
+  margin: 0 50px;
+}
+
+.exploracao h2 {
+  font-size: 3rem;
+  margin-bottom: 16px;
+}
+
+.exploracao p {
+  font-size: 1.125rem;
+  font-weight: 400;
+  color: #e1e1e6;
+}
+
+/* 404 */
+
+.error {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  font-family: var(--font);
+  color: white;
+}
+
+.error h1 {
+  font-size: 2rem;
+  margin-bottom: 16px;
+}
+
+.error h2 {
+  font-size: 1.5rem;
+  margin-bottom: 16px;
+}
