@@ -1,51 +1,13 @@
-const routes = {
-  "/": "/pages/home.html",
-  "/about": "/pages/about.html",
-  "/contact": "/pages/contact.html",
-  404: "/pages/404.html",
-};
+import Router from "./routes.js";
 
-function route(event) {
-  event = event || window.event;
-  event.preventDefault();
+const router = new Router();
 
-  window.history.pushState({}, "", event.target.href);
+router.add("/", "/pages/home.html");
+router.add("/about", "/pages/about.html");
+router.add("/contact", "/pages/contact.html");
+router.add(404, "/pages/404.html");
 
-  handle();
-  changeBg();
-}
+router.handle();
 
-function handle() {
-  const { pathname } = window.location;
-  const route = routes[pathname] || routes[404];
-  fetch(route)
-    .then((data) => data.text())
-    .then((html) => {
-      document.querySelector("#app").innerHTML = html;
-    });
-}
-
-handle();
-
-function changeBg() {
-  const { pathname } = window.location;
-  const { body } = document;
-
-  switch (pathname) {
-    case "/about":
-      body.className = "about-universe";
-      break;
-
-    case "/contact":
-      body.className = "about-exploration";
-      break;
-
-    default:
-      body.className = "";
-      break;
-  }
-}
-
-changeBg();
-
-window.onpopstate = () => handle();
+window.onpopstate = () => router.handle();
+window.route = () => router.route();
